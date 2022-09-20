@@ -1,3 +1,6 @@
+mod std_in_num;
+
 fn main() {
-    println!("Hello, world!");
+  let num = std_in_num::input_num();
+  println!("{}", num);
 }
