@@ -1,7 +1,15 @@
 mod fizzbuzz;
-mod arguments;
+use structopt::StructOpt;
+
+#[derive(Debug, StructOpt)]
+#[structopt(name = "Arguments", about = "An argument of fizzbuzz.")]
+struct Opt {
+    /// A max value of fizzbuzz execution.
+    #[structopt(short = "m", long = "max", default_value = "100")]
+    max: i32,
+}
 
 fn main() {
-    let num = arguments::fetch_optional_integer_arg();
-    fizzbuzz::range_fizzbuzz(num);
+    let opt = Opt::from_args();
+    fizzbuzz::range_fizzbuzz(opt.max);
 }
