@@ -18,5 +18,8 @@
       "other": "off"
     },
     "files.trimTrailingWhitespace": false
-  }
+  },
+  "cSpell.words": [
+    "structopt"
+  ]
 }
